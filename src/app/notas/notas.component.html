@@ -1,0 +1,92 @@
+<div class="app-content content">
+
+
+
+      <!-- <div class="article" [innerHTML]= "uploads"></div> -->
+      
+
+        
+    <div class="content-wrapper">
+      <div class="content-header row">
+        <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+          <h3 class="content-header-title mb-0 d-inline-block">Notas</h3>
+          <div class="row breadcrumbs-top d-inline-block">
+            <div class="breadcrumb-wrapper col-12">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Notas Carregadas
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="content-header-right col-md-4 col-12 d-none d-md-inline-block">
+            <div class="btn-group float-md-right btn-gradient-secondary">
+                <label for="files" class="btn-sm white" >Upload</label>
+                <input type="file" class="btn-sm white" (change)="onFileSelect($event)" />
+          <!-- <div class="btn-group float-md-right"><button class="btn-gradient-secondary btn-sm white" (click)="onList()">Buy now</button> -->
+            <!-- <label>
+                <input type="file" name="fileUpload" (change)="onFileSelect($event)" />
+              </label> -->
+        </div>
+        </div>
+      </div>
+      <div class="content-body"><div id="transactions">
+  <div class="transactions-table-th d-none d-md-block">
+      <div class="col-12">
+          <div class="row px-1">
+              <div class="col-md-3 col-12 py-1">
+                  <p class="mb-0">Data</p>
+              </div>
+              <div class="col-md-6 col-12 py-1">
+                  <p class="mb-0">Arquivo</p>
+              </div>
+              
+              <div class="col-md-1 col-12 py-1">
+                  <p class="mb-0">Tipo</p>
+              </div>
+
+              <div class="col-md-1 col-12 py-1">
+                  <p class="mb-0">Download</p>
+              </div>
+              <div class="col-md-1 col-12 py-1">
+                <p class="mb-0">Excluir</p>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="transactions-table-tbody" >
+
+      <section class="card pull-up"  *ngFor="let item of allfileslist">
+          <div class="card-content">
+              <div class="card-body">
+                  <div class="col-12">
+                      <div class="row">
+                          <div class="col-md-3 col-12 py-1">
+                              <p class="mb-0"><span class="d-inline-block d-md-none text-bold-700">Importação: </span>{{item.LastModified | date: 'dd/MM/yyyy'}}</p>
+                          </div>
+                         
+                          <div class="col-md-6 col-12 py-1">
+                                <div>{{getName(item.Key)}}</div><p class="mb-0"><span class="d-inline-block d-md-none text-bold-700"> </span> </p>
+                          </div>
+                          <div class="col-md-1 col-12 py-1">                        
+                                <i class="cc {{getExtension(item.Key)}}"></i>                                            
+                          </div>                          
+                          <div class="col-md-1 col-12 py-1">
+                            <!-- <span class="d-inline-block d-md-none text-bold-700">Download: </span> <span class="d-inline-block d-md-none text-bold-700">Type: </span>   -->
+                            <button class="mb-0 btn-sm btn btn-outline-success rounded-pill fs-2 mb-3" (click)="onClickDownload(item.Key)"><i class="bi bi-cloud-arrow-down-fill"></i></button>
+                            <!-- <a href="#" class="mb-0 btn-sm btn btn-outline-warning round">Baixar</a> -->
+                        </div>
+                        <div class="col-md-1 col-12 py-1">                            
+                            <button class="mb-0 btn-sm btn btn-outline-danger rounded-pill fs-2 mb-3" (click)="onClickExcluir(item.Key)"><i class="bi bi-trash-fill"></i></button>                            
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+     </div>
+</div>
+ 
+  <!-- ////////////////////////////////////////////////////////////////////////////-->

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('./app-assets/vendors/css/charts/chartist.css');
+@import url('./app-assets/vendors/css/charts/chartist-plugin-tooltip.css');
+@import url('./app-assets/css/app.css');
+
+@import url('./app-assets/css/core/menu/menu-types/vertical-compact-menu.css');
+@import url('./app-assets/vendors/css/cryptocoins/cryptocoins.css');
+@import url('./app-assets/css/pages/timeline.css');
+@import url('./app-assets/css/pages/dashboard-ico.css');
+
+@import url('./app-assets/css/vendors.css');
+
+
+::ng-deep .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .meu-file-input::before {
+    content: 'Select some files';
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+  ::ng-deep .meu-file-input:hover::before {
+    border-color: black;
+  }
+  ::ng-deep .meu-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }

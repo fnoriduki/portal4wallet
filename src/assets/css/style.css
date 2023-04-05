@@ -1,0 +1,19 @@
+/*================================================================================
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: ThemeSelection
+	Author URL: https://themeselection.com/
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+
+@media (max-width: 767.98px){
+
+    .navbar-light.navbar-bg-color[_ngcontent-byy-c53] {
+        background: hsl(0, 0%, 100%);
+    }
+}

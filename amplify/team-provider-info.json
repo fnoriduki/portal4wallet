@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-4wallet-dev-205701-authRole",
+      "UnauthRoleArn": "arn:aws:iam::443819092655:role/amplify-4wallet-dev-205701-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::443819092655:role/amplify-4wallet-dev-205701-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-4wallet-dev-205701-deployment",
+      "UnauthRoleName": "amplify-4wallet-dev-205701-unauthRole",
+      "StackName": "amplify-4wallet-dev-205701",
+      "StackId": "arn:aws:cloudformation:us-east-1:443819092655:stack/amplify-4wallet-dev-205701/fc0fa760-8ee6-11ed-8db5-0a6dd47d6d25",
+      "AmplifyAppId": "d2xxb75gjt8m4r"
+    }
+  }
+}

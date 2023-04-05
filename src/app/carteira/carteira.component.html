@@ -1,0 +1,248 @@
+<div class="app-content content">
+
+    <!-- <tbody>
+        <tr *ngFor="let ticker of tickerList">
+            <th scope="row">{{ticker.TICKER}}</th>
+            <td>{{ticker.PRECO_MEDIO}}</td>
+            <td>{{ticker.QTD}}</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody> -->
+     <div class="content-wrapper">
+      <div class="content-header row">
+        <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+          <h3 class="content-header-title mb-0 d-inline-block">Wallet</h3>
+          <div class="row breadcrumbs-top d-inline-block">
+            <div class="breadcrumb-wrapper col-12">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Wallet
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="content-header-right col-md-4 col-12 d-none d-md-inline-block">
+          <div class="btn-group float-md-right">
+            <!-- <button class="btn-gradient-secondary btn-sm white" (click)="on(item.Key)">Download</button> -->
+            <button class="btn-gradient-secondary btn-sm white" (click)="onClickCalcular()">Calcular carteira</button>
+            <!-- <a class="btn-gradient-secondary btn-sm white" href="wallet.html">Calcular carteira</a></div> -->
+        </div>
+      </div>
+      <div class="content-detached content-left">
+        <div class="content-body"><div id="wallet">
+  <div class="wallet-table-th d-none d-md-block">
+    <div class="col-12">
+      <div class="row">
+          <div class="col-md-2 col-12 py-1">
+              <p class="mt-0 text-capitalize">Ativo</p>
+          </div>
+          <div class="col-md-2 col-12 py-1 text-center">
+            <p class="mt-0 text-capitalize">Quantidade</p>
+        </div>          
+          <div class="col-md-2 col-12 py-1 text-center">
+              <p class="mt-0 text-capitalize">Preço Médio</p>
+          </div>
+
+        <div class="col-md-3 col-12 py-1 text-center">
+            <p class="mt-0 text-capitalize">Valor Mercado</p>
+        </div>
+          <div class="col-md-3 col-12 py-1 text-center">
+            <p class="mt-0 text-capitalize">Resultado</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BTC -->
+      <section class="card pull-up" *ngFor="let item of tickerList">
+      <div [ngClass]="getClassOf(item.total_resultado!,'row')">
+          <div class="card-body">
+              <div class="col-12">
+                  <div class="row">
+                      <div class="col-md-2 col-12 py-1">
+                          <div class="media">
+                              <i  [ngClass]="getClassOf(item.total_resultado!,'icon')">
+
+                               
+                             
+                              </i>
+                              <div class="media-body">
+                                <span class="line-height-3"> {{item.ticker}}</span>
+                                  <!-- <h5 class="mt-0 text-capitalize">{{item.ticker}}</h5>                                   -->
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-2 col-12 py-1 text-center">
+                        <span class="line-height-3"> {{item.qtd}}</span>
+                    </div>       
+                    <div class="col-md-2 col-12 py-1 text-center">
+                        <h6>{{item.preco_medio | currency:'BRL':'symbol'}}</h6>
+                        <p class="text-muted mb-0 font-small-3">{{item.total_pago | currency:'BRL':'symbol'}}</p>
+                    </div>
+                    <div class="col-md-3 col-12 py-1 text-center">
+                        <h6>{{item.valor_mercado | currency:'BRL':'symbol'}}</h6>
+                        <p class="text-muted mb-0 font-small-3">{{item.total_mercado | currency:'BRL':'symbol'}}</p>
+                    </div>
+                    <div class="col-md-3 col-12 py-1 text-center">                        
+                        <span class="line-height-3"> {{item.total_resultado | currency:'BRL':'symbol'}}</span>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--/ BTC -->
+  <!-- ETH -->
+  <!--  <section class="card pull-up">
+      <div class="card-content">
+          <div class="card-body">
+              <div class="col-12">
+                  <div class="row">
+                      <div class="col-md-6 col-12 py-1">
+                          <div class="media">
+                              <i class="cc ETH mr-2 font-large-2 blue accent-3"></i>
+                              <div class="media-body">
+                                  <h5 class="mt-0 text-capitalize">Ethereum</h5>
+                                  <p class="text-muted mb-0 font-small-3 wallet-address">0xe834a970619218d0a7db4ee5a3c87022e71e177f</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <h6>0.6789842 ETH</h6>
+                          <p class="text-muted mb-0 font-small-3">~ $650.78</p>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <a href="#" class="line-height-3">Deposit</a>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <a href="#" class="line-height-3">Withdraw</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!--/ ETH -->
+  <!-- TetherUSD -->
+  <!--<section class="card pull-up">
+      <div class="card-content">
+          <div class="card-body">
+              <div class="col-12">
+                  <div class="row">
+                      <div class="col-md-6 col-12 py-1">
+                          <div class="media">
+                              <i class="cc USDT-alt mr-2 font-large-2 teal lighten-2"></i>
+                              <div class="media-body">
+                                  <h5 class="mt-0 text-capitalize">TetherUSD</h5>
+                                  <p class="text-muted mb-0 font-small-3 wallet-address">0xe834a970619218d0a7db4ee5a3c87022e71e177f</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <h6>0 USDT</h6>
+                          <p class="text-muted mb-0 font-small-3">~ $0</p>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <a href="#" class="line-height-3">Deposit</a>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <a href="#" class="line-height-3">Withdraw</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section> 
+  <!--/ TetherUSD -->
+  <!-- USD, EUR, other fiat currencies -->
+  <!--<section class="card pull-up">
+      <div class="card-content">
+          <div class="card-body">
+              <div class="col-12">
+                  <div class="row">
+                      <div class="col-md-6 col-12 py-1">
+                          <div class="media">
+                              <i class="la la-dollar mr-2 bg-primary white bg-lighten-2 rounded-circle"></i>
+                              <div class="media-body">
+                                  <h5 class="mt-0 text-capitalize">USD</h5>
+                                  <p class="text-muted mb-0 font-small-3 wallet-address">Fiat currencies</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <h6>1500 USD</h6>
+                          <p class="text-muted mb-0 font-small-3">~ $1500</p>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <a href="#" class="line-height-3">Deposit</a>
+                      </div>
+                      <div class="col-md-2 col-12 py-1 text-center">
+                          <a href="#" class="line-height-3">Withdraw</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section> 
+  <!--/ USD, EUR, other fiat currencies -->
+<!--</div>
+        </div>
+      </div>
+     
+      <div class="sidebar-detached sidebar-right" >
+        <div class="sidebar"><div id="wallet-sidebar" class="sidebar-content">
+  <div class="row">
+      <p class="py-1 text-capitalize col-12">Your balance</p>
+  </div>
+   
+  <div class="card">
+      <div class="card-header">
+          <h6 class="card-title text-center">ICO Tokens</h6>            
+      </div>
+      <div class="card-content collapse show">
+          <div class="card-body">
+
+              <div class="text-center row clearfix mb-2">
+                  <div class="col-12">
+                      <i class="icon-layers font-large-3 bg-warning bg-glow white rounded-circle p-3 d-inline-block"></i>
+                  </div>
+              </div>
+              <h3 class="text-center">3,458.88 CIC</h3>
+          </div>
+          <div class="table-responsive">
+                <table class="table table-de mb-0">                    
+                  <tbody>
+                    <tr>
+                      <td>CIC Token</td>
+                      <td><i class="icon-layers"></i> 3,258 CIC</td>
+                    </tr>
+                    <tr>
+                      <td>CIC Referral</td>
+                      <td><i class="icon-layers"></i> 200.88 CIC</td>                        
+                    </tr>
+                    <tr>
+                      <td>CIC Price</td>
+                      <td><i class="cc BTC-alt"></i> 0.0001 BTC</td>
+                    </tr>
+                    <tr>
+                      <td>Raised BTC</td>
+                      <td><i class="cc BTC-alt"></i> 2154 BTC</td>                        
+                    </tr>
+                    <tr>
+                      <td>Raised USD</td>
+                      <td><i class="la la-dollar"></i> 4.52 M</td>                        
+                    </tr>                      
+                  </tbody>
+                </table>
+              </div>
+      </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div> 
+  </div> -->
